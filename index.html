@@ -7,11 +7,56 @@
     <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Use Inter font and smooth scrolling */
+        /*
+        ---------------------------------------------------
+        CUSTOM CSS FOR ENHANCED AESTHETICS (Vibrant Magenta Theme)
+        ---------------------------------------------------
+        */
+        :root {
+            /* High-energy accent color: Electric Magenta (Pink 400) */
+            --primary-color: #f472b6; 
+            --bg-dark: #070e17; 
+        }
+
+        /* Base styles, strong background gradient, and smooth scrolling */
         body {
             font-family: 'Inter', sans-serif;
             scroll-behavior: smooth;
-            background-color: #0d1117; /* Dark background */
+            background-color: var(--bg-dark);
+            /* Updated radial gradient for magenta compatibility (Deep Indigo/Purple) */
+            background-image: radial-gradient(at 0% 0%, #312e81 0%, transparent 50%), 
+                              radial-gradient(at 100% 100%, #4c1d95 0%, transparent 50%);
+            color: #e2e8f0; /* Light text */
+        }
+
+        /* Animation for sections for a professional fade-in effect */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Custom Card Hover Effect: NEON glow and border */
+        .skill-card:hover {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 40px rgba(244, 114, 182, 0.7); /* Much Stronger Magenta Glow */
+            transform: translateY(-8px); /* Increased lift for dynamic feel */
+        }
+
+        /* Navigation link hover effect */
+        .nav-link:hover {
+            color: var(--primary-color);
+            text-shadow: 0 0 10px rgba(244, 114, 182, 1.0); /* Intense text glow */
+        }
+
+        /* Applied fade-in to main content */
+        main {
+            animation: fadeIn 1s ease-out forwards;
+        }
+
+        .section-heading {
+            border-bottom: 3px solid var(--primary-color); /* Thicker border */
+            display: inline-block;
+            padding-bottom: 0.5rem;
         }
     </style>
     <script>
@@ -37,22 +82,22 @@
     </script>
 </head>
 
-<body class="text-gray-200">
+<body>
 
     <!-- Navigation Bar -->
-    <nav class="sticky top-0 z-50 bg-gray-900/90 backdrop-blur-sm shadow-xl">
+    <nav class="sticky top-0 z-50 bg-gray-900/90 backdrop-blur-xl shadow-2xl shadow-pink-900/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16 items-center">
                 <!-- Logo/Name -->
                 <div class="flex-shrink-0">
-                    <span class="text-2xl font-bold text-teal-400">Joyal Jaison</span>
+                    <span class="text-3xl font-extrabold text-pink-400 tracking-wider">J<span class="text-white">J.</span></span>
                 </div>
                 <!-- Nav Links -->
-                <div class="hidden md:flex space-x-6">
-                    <a href="#home" class="text-gray-300 hover:text-teal-400 transition duration-300 px-3 py-2 rounded-md text-sm font-medium">Home</a>
-                    <a href="#skills" class="text-gray-300 hover:text-teal-400 transition duration-300 px-3 py-2 rounded-md text-sm font-medium">Skills</a>
-                    <a href="#experience" class="text-gray-300 hover:text-teal-400 transition duration-300 px-3 py-2 rounded-md text-sm font-medium">Experience</a>
-                    <a href="#contact" class="text-gray-300 hover:text-teal-400 transition duration-300 px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link text-gray-300 transition duration-300 px-3 py-2 rounded-md text-base font-medium">Home</a>
+                    <a href="#skills" class="nav-link text-gray-300 transition duration-300 px-3 py-2 rounded-md text-base font-medium">Expertise</a>
+                    <a href="#about" class="nav-link text-gray-300 transition duration-300 px-3 py-2 rounded-md text-base font-medium">About</a>
+                    <a href="#contact" class="nav-link text-gray-300 transition duration-300 px-3 py-2 rounded-md text-base font-medium">Contact</a>
                 </div>
             </div>
         </div>
@@ -61,98 +106,98 @@
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
         <!-- 1. Hero Section -->
-        <section id="home" class="h-screen flex items-center justify-center -mt-16 text-center">
-            <div class="p-8 md:p-16 bg-gray-800/50 rounded-xl shadow-2xl backdrop-blur-sm border border-gray-700 w-full max-w-4xl">
-                <h1 class="text-5xl sm:text-7xl font-extrabold tracking-tight text-white mb-4 leading-tight">
+        <section id="home" class="min-h-[85vh] flex items-center justify-center text-center pt-16">
+            <div class="p-8 md:p-16 bg-gray-800/60 rounded-3xl shadow-3xl backdrop-blur-sm border border-pink-800 w-full max-w-5xl transition duration-500 hover:scale-[1.01] hover:shadow-pink-900/50">
+                <p class="text-xl sm:text-2xl font-light text-pink-300 mb-2">Hello, I'm</p>
+                <h1 class="text-6xl sm:text-8xl font-black tracking-tight text-white mb-6 leading-tight">
                     Joyal Jaison
                 </h1>
-                <p class="text-2xl sm:text-3xl font-light text-teal-400 mb-6">
-                    Passionate Software Developer
+                <p class="text-3xl sm:text-4xl font-extralight text-pink-400 mb-8">
+                    Software Developer | Cyber Security | Cloud Engineer
                 </p>
-                <p class="text-xl text-gray-400 mb-8">
-                    Based in **Thrissur, Kerala**
+                <p class="text-lg text-gray-400 mb-10 max-w-3xl mx-auto">
+                    A passionate developer based in **Thrissur, Kerala**, driving innovation with 4 years of experience in secure, scalable, and cross-functional technology solutions.
                 </p>
-                <a href="#skills" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-lg text-gray-900 bg-teal-400 hover:bg-teal-300 transition duration-300 shadow-lg transform hover:scale-105">
-                    View My Expertise
+                <!-- Primary Call to Action Button -->
+                <a href="#skills" class="inline-flex items-center justify-center px-10 py-4 text-lg font-bold rounded-xl text-gray-900 bg-pink-400 hover:bg-pink-300 transition duration-300 shadow-2xl shadow-pink-500/50 transform hover:scale-105 active:scale-95">
+                    Explore My Skills
                 </a>
             </div>
         </section>
 
-        <!-- 2. About/Experience Summary Section -->
-        <section id="experience" class="py-20">
-            <h2 class="text-4xl font-bold text-center text-white mb-12 border-b-2 border-teal-400 pb-3 inline-block mx-auto">About Me</h2>
-            <div class="bg-gray-800 p-8 rounded-xl shadow-2xl border border-gray-700">
-                <p class="text-lg leading-relaxed text-gray-300">
-                    I am a highly motivated and **passionate software developer** with **4 years of hands-on experience** across various technology stacks. My career has focused on building robust and scalable applications while specializing in the critical areas of **Cyber Security** and **Cloud Infrastructure**.
-                </p>
-                <p class="mt-4 text-lg leading-relaxed text-gray-300">
-                    I thrive on tackling complex challenges, leveraging my diverse skill set to implement secure, efficient, and modern solutions. I am committed to continuous learning and delivering high-quality, impactful software.
-                </p>
+        <!-- 2. Skills Section -->
+        <section id="skills" class="py-24">
+            <h2 class="text-4xl font-bold text-center text-white mb-16 section-heading mx-auto">Core Expertise</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+
+                <!-- Skill Card 1: Development Stacks -->
+                <div class="skill-card bg-gray-900 p-8 rounded-xl shadow-2xl transition duration-500 transform border border-gray-700">
+                    <svg class="w-12 h-12 text-pink-400 mb-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                    <h3 class="text-2xl font-bold text-white mb-4">Full-Stack Development</h3>
+                    <p class="text-gray-400 mb-4">4 years of experience building scalable applications using modern frameworks and diverse programming languages.</p>
+                    <ul class="mt-4 space-y-2 text-md text-gray-300 font-medium">
+                        <li class="flex items-center"><span class="w-2 h-2 bg-pink-400 rounded-full mr-3 shadow-lg shadow-pink-500/50"></span>Backend: Node.js, Python, Java</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-pink-400 rounded-full mr-3 shadow-lg shadow-pink-500/50"></span>Frontend: React, JavaScript, HTML5</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-pink-400 rounded-full mr-3 shadow-lg shadow-pink-500/50"></span>Database: MongoDB, PostgreSQL</li>
+                    </ul>
+                </div>
+
+                <!-- Skill Card 2: Cyber Security -->
+                <div class="skill-card bg-gray-900 p-8 rounded-xl shadow-2xl transition duration-500 transform border border-gray-700">
+                    <svg class="w-12 h-12 text-pink-400 mb-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                    <h3 class="text-2xl font-bold text-white mb-4">Cyber Security Focus</h3>
+                    <p class="text-gray-400 mb-4">Implementing secure development lifecycle (SDL) practices and robust security measures in application architecture.</p>
+                    <ul class="mt-4 space-y-2 text-md text-gray-300 font-medium">
+                        <li class="flex items-center"><span class="w-2 h-2 bg-pink-400 rounded-full mr-3 shadow-lg shadow-pink-500/50"></span>Secure Code Review (SAST/DAST)</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-pink-400 rounded-full mr-3 shadow-lg shadow-pink-500/50"></span>Identity & Access Management (IAM)</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-pink-400 rounded-full mr-3 shadow-lg shadow-pink-500/50"></span>Vulnerability Assessment & Hardening</li>
+                    </ul>
+                </div>
+
+                <!-- Skill Card 3: Cloud & DevOps -->
+                <div class="skill-card bg-gray-900 p-8 rounded-xl shadow-2xl transition duration-500 transform border border-gray-700">
+                    <svg class="w-12 h-12 text-pink-400 mb-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.976 4 4 0 00-7.962-1.34A6 6 0 003 15z"></path></svg>
+                    <h3 class="text-2xl font-bold text-white mb-4">Cloud & Infrastructure</h3>
+                    <p class="text-gray-400 mb-4">Experienced in cloud architecture, deployment, and maintaining high availability using DevOps principles.</p>
+                    <ul class="mt-4 space-y-2 text-md text-gray-300 font-medium">
+                        <li class="flex items-center"><span class="w-2 h-2 bg-pink-400 rounded-full mr-3 shadow-lg shadow-pink-500/50"></span>Cloud Platforms: AWS, Azure</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-pink-400 rounded-full mr-3 shadow-lg shadow-pink-500/50"></span>DevOps Tools: Docker, Kubernetes</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-pink-400 rounded-full mr-3 shadow-lg shadow-pink-500/50"></span>Automation: Terraform, CI/CD Pipelines</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 3. About/Summary Section -->
+        <section id="about" class="py-24">
+            <h2 class="text-4xl font-bold text-center text-white mb-16 section-heading mx-auto">My Story</h2>
+            <div class="bg-gray-800 p-10 rounded-2xl shadow-3xl shadow-gray-900/50 border-t-4 border-pink-400">
+                <blockquote class="text-2xl italic leading-relaxed text-gray-300 text-center">
+                    "From Thrissur, Kerala, I've cultivated a deep passion for the complete software lifecycle. My **four years of experience** have been driven by a commitment to code that is not only functional but fundamentally **secure** and **cloud-optimized**. I blend development speed with architectural diligence to deliver lasting value."
+                </blockquote>
                 <div class="mt-8 flex justify-center">
-                     <span class="text-md font-semibold text-gray-400 border border-teal-400 px-4 py-2 rounded-full">
-                        4+ Years of Professional Experience
+                     <span class="text-md font-semibold text-gray-400 border border-pink-400 px-5 py-2 rounded-full tracking-wider bg-gray-700">
+                        Goal-Oriented | Continuous Learner | Problem Solver
                     </span>
                 </div>
             </div>
         </section>
 
-        <!-- 3. Skills Section -->
-        <section id="skills" class="py-20">
-            <h2 class="text-4xl font-bold text-center text-white mb-12 border-b-2 border-teal-400 pb-3 inline-block mx-auto">Core Expertise</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-
-                <!-- Skill Card 1: Various Stacks -->
-                <div class="bg-gray-800 p-6 rounded-xl shadow-xl hover:shadow-teal-500/50 transition duration-300 transform hover:-translate-y-1 border border-gray-700">
-                    <svg class="w-10 h-10 text-teal-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
-                    <h3 class="text-xl font-semibold text-white mb-3">Full-Stack Development</h3>
-                    <p class="text-gray-400">Expertise in diverse technology stacks, from front-end user interfaces to robust back-end systems and database management.</p>
-                    <ul class="mt-4 space-y-2 text-sm text-gray-300">
-                        <li class="flex items-center"><span class="w-2 h-2 bg-teal-400 rounded-full mr-2"></span>Node.js / Python / Java (Example Stacks)</li>
-                        <li class="flex items-center"><span class="w-2 h-2 bg-teal-400 rounded-full mr-2"></span>React / Vue / Angular (Example Frontend)</li>
-                        <li class="flex items-center"><span class="w-2 h-2 bg-teal-400 rounded-full mr-2"></span>SQL and NoSQL Databases</li>
-                    </ul>
-                </div>
-
-                <!-- Skill Card 2: Cyber Security -->
-                <div class="bg-gray-800 p-6 rounded-xl shadow-xl hover:shadow-teal-500/50 transition duration-300 transform hover:-translate-y-1 border border-gray-700">
-                    <svg class="w-10 h-10 text-teal-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
-                    <h3 class="text-xl font-semibold text-white mb-3">Cyber Security</h3>
-                    <p class="text-gray-400">A strong focus on application security, secure coding practices, and vulnerability assessment.</p>
-                    <ul class="mt-4 space-y-2 text-sm text-gray-300">
-                        <li class="flex items-center"><span class="w-2 h-2 bg-teal-400 rounded-full mr-2"></span>Authentication & Authorization (OAuth, JWT)</li>
-                        <li class="flex items-center"><span class="w-2 h-2 bg-teal-400 rounded-full mr-2"></span>OWASP Top 10 Mitigation</li>
-                        <li class="flex items-center"><span class="w-2 h-2 bg-teal-400 rounded-full mr-2"></span>Penetration Testing & Security Audits</li>
-                    </ul>
-                </div>
-
-                <!-- Skill Card 3: Cloud -->
-                <div class="bg-gray-800 p-6 rounded-xl shadow-xl hover:shadow-teal-500/50 transition duration-300 transform hover:-translate-y-1 border border-gray-700">
-                    <svg class="w-10 h-10 text-teal-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.976 4 4 0 00-7.962-1.34A6 6 0 003 15z"></path></svg>
-                    <h3 class="text-xl font-semibold text-white mb-3">Cloud Computing (DevOps)</h3>
-                    <p class="text-gray-400">Proficiency in deploying, managing, and scaling applications on major cloud platforms.</p>
-                    <ul class="mt-4 space-y-2 text-sm text-gray-300">
-                        <li class="flex items-center"><span class="w-2 h-2 bg-teal-400 rounded-full mr-2"></span>AWS / Google Cloud / Azure (Specific Platforms)</li>
-                        <li class="flex items-center"><span class="w-2 h-2 bg-teal-400 rounded-full mr-2"></span>Containerization (Docker, Kubernetes)</li>
-                        <li class="flex items-center"><span class="w-2 h-2 bg-teal-400 rounded-full mr-2"></span>Infrastructure as Code (Terraform)</li>
-                    </ul>
-                </div>
-
-            </div>
-        </section>
-
         <!-- 4. Contact Section (Simple CTA) -->
-        <section id="contact" class="py-20 text-center">
-            <h2 class="text-4xl font-bold text-white mb-6">Let's Build Something Great Together</h2>
-            <p class="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
-                Whether you're looking for an application built from scratch, or need to enhance the security and scalability of your existing infrastructure, I'm ready to help.
+        <section id="contact" class="py-24 text-center">
+            <h2 class="text-4xl font-bold text-white mb-6">Ready to Connect?</h2>
+            <p class="text-xl text-gray-400 mb-10 max-w-3xl mx-auto">
+                Let's discuss how my cross-functional expertise in development, security, and cloud can benefit your next project.
             </p>
             <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-                <!-- Replace with actual email/phone -->
-                <a href="mailto:your.email@example.com" class="inline-flex items-center justify-center px-10 py-4 border border-teal-400 text-base font-medium rounded-lg text-teal-400 hover:bg-teal-400 hover:text-gray-900 transition duration-300 shadow-lg transform hover:scale-105">
-                    Email Me
+                <!-- Action Button 1 (Email) -->
+                <a href="mailto:your.email@example.com" class="inline-flex items-center justify-center px-10 py-4 border border-pink-400 text-lg font-medium rounded-xl text-pink-400 hover:bg-pink-400 hover:text-gray-900 transition duration-300 shadow-lg transform hover:scale-105">
+                    Send Me an Email
                 </a>
-                <a href="https://linkedin.com/in/joyal-jaison" target="_blank" class="inline-flex items-center justify-center px-10 py-4 border border-transparent text-base font-medium rounded-lg text-white bg-gray-700 hover:bg-gray-600 transition duration-300 shadow-lg transform hover:scale-105">
-                    View LinkedIn
+                <!-- Action Button 2 (LinkedIn/Resume) -->
+                <a href="https://linkedin.com/in/joyal-jaison" target="_blank" class="inline-flex items-center justify-center px-10 py-4 border border-transparent text-lg font-medium rounded-xl text-white bg-gray-700 hover:bg-gray-600 transition duration-300 shadow-lg transform hover:scale-105">
+                    Find Me on LinkedIn
                 </a>
             </div>
         </section>
@@ -160,10 +205,10 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 mt-12 py-6">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-400">
-            <p>&copy; 2025 Joyal Jaison. Crafted with Passion from Thrissur, Kerala.</p>
-            <p class="text-xs mt-2">All rights reserved.</p>
+    <footer class="bg-gray-900 mt-16 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-500">
+            <p>&copy; 2025 Joyal Jaison. All rights reserved.</p>
+            <p class="text-sm mt-1">Built with HTML and Tailwind CSS.</p>
         </div>
     </footer>
 
